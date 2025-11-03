@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<center><h1>Show Orders</h1></center>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Order ID</th><th>First Name</th><th>Last Name</th>
+      <th>Price</th><th>Email</th><th>Address</th><th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in obj %}
+    <tr>
+      <td>{{ i.oid }}</td>
+      <td>{{ i.fname }}</td>
+      <td>{{ i.lname }}</td>
+      <td>{{ i.price }}</td>
+      <td>{{ i.mail }}</td>
+      <td>{{ i.addr }}</td>
+      <td>
+        <a class="btn btn-warning" href="{% url 'orders_edit' i.oid %}">Update</a>
+        <form method="post" action="{% url 'orders_delete' i.oid %}" style="display:inline;">
+          {% csrf_token %}
+          <button class="btn btn-danger" type="submit">Delete</button>
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<a class="btn btn-primary" href="{% url 'orders_new' %}">Create new</a>
+{% endblock %}
+
