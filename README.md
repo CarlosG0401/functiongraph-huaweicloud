@@ -1,4 +1,4 @@
-In this prject is a CRUD application simple building with Django and adapted to be a serverless aplication with an interface of API's building a complete API REST (GET, PUT, POST, DELETE).
+In this project is a CRUD application simple building with Django and adapted to be a serverless aplication with an interface of API's building a complete API REST (GET, PUT, POST, DELETE).
 
 This project could be adapt to any of hyperscalers that have a service function-based and interface of API REST that can redirect any user request based on their behaviour. In this case, I choose to use Huawei Cloud services:
 
